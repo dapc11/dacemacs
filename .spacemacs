@@ -14,17 +14,23 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest
              python-sort-imports-on-save t
              python-formatter 'black
-             python-backend 'lsp python-lsp-server 'pyright)
+             python-backend 'lsp
+             python-lsp-server 'pyright)
      go
      javascript
      yaml
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'complete
+                      auto-completion-enable-snippets-in-popup t)
      emacs-lisp
      git
      helm
      lsp
      markdown
-     multiple-cursors
+     (version-control :variables
+                      version-control-global-margin t
+                      version-control-diff-tool 'git-gutter+)
      (shell :variables
             shell-default-term-shell "/bin/bash"
             shell-default-height 30
