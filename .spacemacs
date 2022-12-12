@@ -28,10 +28,8 @@ This function should only modify configuration layer settings."
      helm
      lsp
      markdown
+     org
      syntax-checking
-     (version-control :variables
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+)
      (version-control :variables
                       version-control-global-margin t
                       version-control-diff-tool 'git-gutter+)
@@ -82,13 +80,13 @@ It should only modify the values of Spacemacs settings."
                          doom-one
                          doom-nord
                          )
-   dotspacemacs-mode-line-theme '(all-the-icons :separator arrow)
+   dotspacemacs-mode-line-theme '(spacemacs :separator-scale 1.0 :separator curve)
    dotspacemacs-colorize-cursor-according-to-state t
+   dotspacemacs-default-font '("Sauce Code Pro Nerd Font"
                                :size 10.0
                                :weight normal
                                :width normal)
    dotspacemacs-activate-smartparens-mode t
-   dotspacemacs-default-font '("Source Code Pro"
    dotspacemacs-active-transparency 90
    dotspacemacs-auto-generate-layout-names nil
    dotspacemacs-auto-resume-layouts nil
