@@ -195,7 +195,6 @@ before packages are loaded."
   (global-set-key (kbd "C-<down> ") 'windmove-down)
   (global-set-key (kbd "C-+") 'text-scale-increase)
   (global-set-key (kbd "C--") 'text-scale-decrease)
-  (global-set-key (kbd "C-e") 'treemacs)
   (spacemacs/set-leader-keys "q" 'kill-buffer-and-window)
   (define-key evil-normal-state-map "ä" #'forward-paragraph)
   (define-key evil-normal-state-map "ö" #'backward-paragraph)
