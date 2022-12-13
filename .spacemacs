@@ -37,9 +37,6 @@ This function should only modify configuration layer settings."
             shell-default-height 30
             shell-default-term-shell "/usr/bin/zsh"
             shell-default-position 'bottom)
-     (version-control :variables
-                      version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+)
      (treemacs :variables
                treemacs-use-all-the-icons-theme t
                treemacs-space-between-root-nodes nil)
@@ -48,7 +45,6 @@ This function should only modify configuration layer settings."
                                       olivetti
                                       org-starter
                                       org-bullets
-                                      good-scroll
                                       writegood-mode)
    dotspacemacs-frozen-packages '()
    dotspacemacs-excluded-packages '()
@@ -147,9 +143,10 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-undecorated-at-startup nil
    dotspacemacs-use-SPC-as-y t
    dotspacemacs-use-clean-aindent-mode t
-   dotspacemacs-which-key-delay 0.4
+   dotspacemacs-which-key-delay 0.2
    dotspacemacs-which-key-position 'bottom
    dotspacemacs-whitespace-cleanup 'changed
+   dotspacemacs-smooth-scrolling t
    dotspacemacs-zone-out-when-idle nil)
 )
 
@@ -169,8 +166,6 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq projectile-project-search-path '(("~/repos/" . 1) ("~/repos_personal/" . 1 )))
-  (setq mouse-wheel-scroll-amount '(0.07))
-  (setq mouse-wheel-progressive-speed nil)
   (setq ring-bell-function 'ignore)
 )
 
@@ -212,11 +207,8 @@ before packages are loaded."
   (define-key evil-normal-state-map "go" 'evil-avy-goto-char-2)
   (treemacs-git-mode 'deferred)
   ;; (cua-mode t)
-  (setq fast-but-imprecise-scrolling nil)
-  (setq mouse-wheel-progressive-speed t)
   (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
   (transient-mark-mode 1) ;; No region when it is not highlighted
-  (good-scroll-mode 1)
   (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
   ;; (add-hook 'org-mode-hook (lambda ()
@@ -294,6 +286,9 @@ before packages are loaded."
   (setq org-agenda-skip-timestamp-if-done t)
   ;; Skip deleted files
   (setq org-agenda-skip-unavailable-files t)
+
+  (setq fast-but-imprecise-scrolling nil)
+  (setq mouse-wheel-progressive-speed t)
   )
 
 
